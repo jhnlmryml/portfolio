@@ -1,10 +1,10 @@
-import { useProgress } from "@react-three/drei";
-import { useEffect } from "react";
+import {useProgress} from "@react-three/drei";
+import {useEffect} from "react";
 
 
 const Loading = (props) => {
-   const { started, setStarted } = props;
-   const { progress, total, loaded, item } = useProgress();
+   const {started, setStarted} = props;
+   const {progress, total, loaded, item} = useProgress();
 
    useEffect(() => {
       console.log(progress, total, loaded, item);
@@ -21,16 +21,18 @@ const Loading = (props) => {
   flex items-center justify-center bg-black-200 
   ${started ? "opacity-0" : "opacity-100"}`}
       >
-         <div className="text-xl md:text-3xl font-bold text-primary relative">
+
+         <div className="text-xl md:text-3xl font-bold font-jetbrains text-primary relative">
             <div
                className="absolute left-0 top-0  overflow-hidden truncate text-clip transition-all duration-500"
                style={{
                   width: `${progress}%`,
                }}
             >
-              jhnlmryml
+               JHNLMRYML
             </div>
-            <div className="opacity-40">jhnlmryml</div>
+            <div className="opacity-40">JHNLMRYML</div>
+
          </div>
       </div>
    );

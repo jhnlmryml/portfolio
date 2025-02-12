@@ -54,7 +54,7 @@ const About = () => {
    }, [rotated]);
 
    return (
-      <section className="pt-20 max-sm:pt-0" id="about">
+      <section className="pt-20 max-sm:pt-10" id="about">
          <motion.div
             initial={{opacity: 0,}}
             whileInView={{opacity: 1,}}
@@ -86,8 +86,8 @@ const About = () => {
                      whileInView={{opacity: 1, x: 0}}
                      transition={{duration: 1.6}}
                      className="mt-4 ">
-                     <p className=" py-2 text-xl font-merriweather text-primary font-semibold">Hi, I’m Jhon Almar</p>
-                     <p className="text-secondary mt-2 text-justify">
+                     <p className=" py-2 text-xl font-poppins text-primary font-semibold">Hi, I’m Jhon Almar</p>
+                     <p className="text-secondary font-nunito mt-2 text-justify">
                         As a dedicated BS Information Technology student, I’m passionate about solving problems and
                         building innovative solutions through code. I enjoy exploring new technologies and honing my
                         skills in web development, programming, and system design. While I’m still early in my journey,
@@ -103,8 +103,8 @@ const About = () => {
                <div className="h-full p-6 rounded-lg shadow-md grid-container">
 
                   <div className="my-2">
-                     <p className="text-xl font-merriweather text-primary font-semibold">Tech Stack</p>
-                     <p className="text-secondary mt-2 text-justify">
+                     <p className="text-xl font-poppins text-primary font-semibold">Tech Stack</p>
+                     <p className="text-secondary font-nunito mt-2 text-justify">
                         I utilize a wide range of languages, frameworks, and tools to build powerful and scalable
                         applications. Each solution is designed with precision, ensuring high performance and
                         reliability. My focus is on innovation and creating seamless experiences that make an impact.
@@ -118,25 +118,25 @@ const About = () => {
                <div className="h-full p-6 rounded-lg shadow-md grid-container flex flex-col justify-evenly">
                   <div className="w-full h-[200px] ">
                      <Canvas>
-                        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2}/>
-                        <ambientLight intensity={.2}/>
-                        <directionalLight position={[10, 10, 10]}/>
+                        <ambientLight intensity={0.5} />
+                        {/* Additional Lights */}
+                        <pointLight position={[5, -5, 5]} intensity={0.8} />
+                        <spotLight position={[0, 5, 10]} angle={0.3} penumbra={0.5} intensity={1} />
                         <Message/>
-
                      </Canvas>
                   </div>
                   <div className="space-y-2">
                      <motion.p
                         animate={{
-                           y: [0, -5, 0], // Bouncing effect
+                           y: [0, -5, 0],
                         }}
                         transition={{
-                           duration: 0.6, // Duration of each bounce
-                           ease: "easeInOut", // Smoothing the animation
-                           repeat: Infinity, // Infinite bouncing
-                           repeatType: "loop", // Loop the animation
+                           duration: 0.6,
+                           ease: "easeInOut",
+                           repeat: Infinity,
+                           repeatType: "loop",
                         }}
-                        className="text-xl font-merriweather text-primary font-semibold text-center">Contact me</motion.p>
+                        className="text-xl font-poppins text-primary font-semibold text-center">Contact me</motion.p>
                      <div className="cursor-pointer flex justify-center items-center gap-2 text-secondary hover:text-hover" onClick={handleCopy}>
                         {hasCopied ?
                            <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8"
@@ -158,7 +158,7 @@ const About = () => {
                                  d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z"
                                  fill="currentColor"/>
                            </svg>}
-                        <p className="lg:text-2xl md:text-xl font-medium  ">yjhonalmar@gmail.com</p>
+                        <p className="lg:text-2xl md:text-xl font-medium font-nunito ">yjhonalmar@gmail.com</p>
                      </div>
                   </div>
                </div>
@@ -217,14 +217,14 @@ const About = () => {
                   </div>
 
                   <div className="text-center">
-                     <p className="text-lg font-merriweather text-primary font-semibold">
+                     <p className="text-lg font-poppins text-primary font-semibold">
                         Adaptable Across Time Zones & Locations
                      </p>
                      <motion.p
                         initial={{opacity: 0, y: 20}}
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 1.6}}
-                        className="text-sm text-secondary mt-2">
+                        className="text-sm font-nunito text-secondary mt-2">
                         Based in Pampanga, Philippines and open to remote work worldwide.
                      </motion.p>
                   </div>

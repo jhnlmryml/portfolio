@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 const Footer = () => {
     return (
         <footer
-            className=" font-ibm border-t mt-12 border-hover py-10 flex justify-center items-center  mx-28 max-md:mx-2 ">
+            className="mt-32 font-jetbrains border-t bottom-0 border-hover py-10 flex justify-center items-center  mx-28 max-md:mx-2 ">
 
 
            <motion.div

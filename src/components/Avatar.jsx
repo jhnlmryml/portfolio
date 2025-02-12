@@ -9,12 +9,12 @@ const Avatar = ({animationName, ...props}) => {
    const phone = useRef();
    const person = useRef();
 
-   const {nodes, materials} = useGLTF('models/last.glb');
+   const {nodes, materials} = useGLTF('models/avatar.glb');
 
    const {animations: wavingAnimation} = useFBX('animations/Waving.fbx');
    const {animations: breathAnimation} = useFBX('animations/Typing.fbx');
    const {animations: fallingAnimation} = useFBX('animations/Gesture.fbx');
-   const {animations: textingAnimation} = useFBX('animations/Texting2.fbx');
+   const {animations: textingAnimation} = useFBX('animations/Texting.fbx');
 
    wavingAnimation[0].name = 'waving';
    breathAnimation[0].name = 'typing';
@@ -1015,11 +1015,11 @@ const Avatar = ({animationName, ...props}) => {
 };
 
 export default Avatar;
-useGLTF.preload('models/last.glb');
+useGLTF.preload('models/avatar.glb');
 
 useFBX.preload('animations/Waving.fbx');
 useFBX.preload('animations/Typing.fbx');
 useFBX.preload('animations/Gesture.fbx');
-useFBX.preload('animations/Texting2.fbx');
+useFBX.preload('animations/Texting.fbx');
 
 

@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -13,7 +16,7 @@
 }
 
 body {
-    background: #010415;
+    background: #000513;
     /*background: #040431;*/
 
 }
@@ -47,12 +50,6 @@ img {
 }
 
 
-.spotlight1 {
-    background-color: hsla(0, 0%, 0%, 1);
-    background-image: radial-gradient(at 90% 9%, hsla(239, 100%, 50%, 0.22) 0px, transparent 50%),
-    radial-gradient(at 13% 10%, hsla(239, 100%, 50%, 0.22) 0px, transparent 50%);
-}
-
 .greet {
     padding: min(1em, 8%) min(1.5em, 8%);
 
@@ -71,17 +68,6 @@ img {
 
 @layer utilities {
 
-    .width-one {
-        width: 90dvw;
-    }
-
-    .width-two {
-        width: 80vw;
-    }
-
-    .width-three {
-        width: 45vw;
-    }
 
     .c-space {
         @apply sm:px-10 px-5;
@@ -121,7 +107,7 @@ img {
     }
 
     .grid-container {
-        @apply border border-black-500 bg-slate-900;
+        @apply border border-black-500 bg-slate-950;
     }
 }
 

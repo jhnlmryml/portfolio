@@ -25,7 +25,7 @@ const SkillsSection = () => {
 
                         <div className="w-full">
                            <motion.h3
-                              className="font-merriweather font-bold  text-secondary"
+                              className="font-poppins font-bold  text-secondary"
                               initial={{
                                  opacity: 0,
                               }}
@@ -58,7 +58,7 @@ const SkillsSection = () => {
                               }}
                            >
                               <motion.div
-                                 className="h-full bg-highlight rounded-full "
+                                 className="h-full bg-gradient-to-r from-amber-600 to-amber-500 rounded-full "
                                  style={{width: `${skill.level}%`}}
                                  initial={{
                                     scaleX: 0,

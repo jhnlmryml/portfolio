@@ -82,20 +82,18 @@ const Work = () => {
 
 
    return (
-      <section className="h-fit xl:h-dvh mt-20 flex justify-center flex-wrap items-center pt-20 max-sm:p-0 max-sm:pt-16 max-md:mt-0 max-md:p-0 sm:px-10 px-0 "
-               id="work">
+      <section className="pt-20 max-sm:pt-10" id="work">
          <motion.div
             initial={{opacity: 0, y: 40 }}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 1.5}}
-            className="element  relative py-6 z-10 flex-wrap px-4 sm:px-6 lg:px-12 ">
-            <h3
-               className="absolute text-hover tracking-wide font-merriweather  text-base sm:text-lg md:text-xl xl:text-2xl">Certification's
-               & Project's</h3>
+            className="element  relative py-6 z-10 flex-wrap">
+            <h3 className="absolute text-hover tracking-wide font-poppins font-extrabold text-base sm:text-lg md:text-xl xl:text-2xl">
+               Workshops</h3>
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-20 gap-5 w-full">
 
 
-               <div className='pb-7 bg-gradient-to-t from-slate-900 rounded-xl '>
+               <div className='pb-7 bg-gradient-to-t from-slate-950 rounded-xl border border-black-500'>
 
                   <div
                      className=" rounded-3xl flex flex-col gap-5 relative sm:p-10 px-5 py-6 ">
@@ -112,8 +110,8 @@ const Work = () => {
 
                      </div>
 
-                     <p className="mt-5 text-base sm:text-lg md:text-xl xl:text-2xl font-ibm font-semibold text-primary animatedText">{items.title}</p>
-                     <p className="text-sm sm:text-base md:text-md xl:text-lg animatedText text-secondary text-justify">{items.subdesc}</p>
+                     <p className="mt-5 text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold text-primary animatedText">{items.title}</p>
+                     <p className="text-sm sm:text-base md:text-md xl:text-lg animatedText text-secondary font-nunito text-justify">{items.subdesc}</p>
 
                   </div>
                   <div className="flex justify-between items-center mx-8">
@@ -150,7 +148,7 @@ const Work = () => {
 
                   onMouseEnter={() => setIsHovered(true)} // Stop switching on hover
                   onMouseLeave={() => setIsHovered(false)} // Resume switching when hover ends
-                  className='pb-7 bg-slate-900 rounded-xl '>
+                  className='pb-7 bg-slate-950 rounded-xl border border-black-500'>
 
                   <div
                      onClick={() => setProj((prevProj) => (prevProj === 0 ? 1 : 0))}
@@ -164,7 +162,7 @@ const Work = () => {
                      <div className="relative disc flex justify-center flex-col">
                         <div className="flex flex-row justify-between items-center  my-5 ">
                            <h2
-                              className="text-primary  text-base sm:text-lg md:text-xl xl:text-2xl font-ibm font-semibold">{project.title}</h2>
+                              className="text-primary  text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold">{project.title}</h2>
                            <div className="flex flex-row gap-3 justify-center items-center">
                               {project.tags.map((tag, index) => (
                                  <div key={index}
@@ -175,7 +173,7 @@ const Work = () => {
 
                            </div>
                         </div>
-                        <p className="text-secondary font-ibm text-justify text-sm sm:text-base md:text-md xl:text-lg  pb-4">{project.desc}</p>
+                        <p className="text-secondary font-nunito text-justify text-sm sm:text-base md:text-md xl:text-lg  pb-4">{project.desc}</p>
 
 
                      </div>
@@ -187,7 +185,7 @@ const Work = () => {
                      target="_blank"
                      rel="noreferrer"
                   >
-                     <p>Check Live Site</p>
+                     <p className={"font-nunito"}>Check Live Site</p>
                      <svg
                         viewBox="0 0 24 24"
                         fill="none"

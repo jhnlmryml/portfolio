@@ -6,9 +6,14 @@ export default {
    ],
    theme: {
       extend: {
+         // fontFamily: {
+         //    merriweather: ['Merriweather', 'sans-serif'],
+         //    ibm: ["IBM Plex Serif", 'serif'],
+         // },
          fontFamily: {
-            merriweather: ['Merriweather', 'sans-serif'],
-            ibm: ["IBM Plex Serif", 'serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            nunito: ['Nunito Sans', 'sans-serif'],
+            jetbrains: ['JetBrains Mono', 'monospace'],
          },
          colors: {
             primary: "#F5F5F5", // Soft White for clear readability
@@ -16,7 +21,7 @@ export default {
             tertiary: "#90A4AE", // Muted Blue-Gray for depth
 
             activeHover: "#00FFFF", // Neon Cyan for interactive elements
-            highlight: "#FF4081", // Neon Pink for important details
+            highlight: "#cb9100", // Neon Pink for important details
             hover: "#00E5FF", // Bright Cyan for branding emphasis
 
             activeBg: "#121212", // True Black for modern elegance
@@ -41,5 +46,39 @@ export default {
 
       },
    },
-   plugins: [],
+   plugins: [
+      function ({ addComponents }) {
+         addComponents({
+            // Default styles
+            '.avatar': {
+               position: "relative",
+               width: "98dvw",
+               height: "92dvh", // Use vh for height-based responsiveness
+            },
+            '.flex-responsive': {
+               flexDirection: "column", // Default to column
+            },
+
+            // Media query override
+            '@media (max-height: 700px) and (min-width: 700px)': {
+               '.flex-responsive': {
+                  flexDirection: "row",
+               },
+               '.position-element': {
+                  position: "absolute",
+                  top: "0",
+                  bottom: "0",
+                  left: "5rem"
+               },
+               '.avatar': {
+                  position: "absolute",
+                  top: "2rem",
+                  right: "0",
+                  width: "40dvw",
+                  height: "85dvh",
+               },
+            },
+         });
+      },
+   ],
 }
