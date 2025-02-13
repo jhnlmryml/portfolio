@@ -31,7 +31,6 @@ const About = () => {
   </svg>`;
 
 
-
    const handleCopy = () => {
       navigator.clipboard.writeText('yjhonalmar@gmail.com');
       setHasCopied(true);
@@ -86,14 +85,15 @@ const About = () => {
                      whileInView={{opacity: 1, x: 0}}
                      transition={{duration: 1.6}}
                      className="mt-4 ">
-                     <p className=" py-2 text-xl font-poppins text-primary font-semibold">Hi, I’m Jhon Almar</p>
+                     <p className=" py-2 text-xl font-poppins text-primary font-semibold">I’m Jhon Almar</p>
                      <p className="text-secondary font-nunito mt-2 text-justify">
-                        As a dedicated BS Information Technology student, I’m passionate about solving problems and
-                        building innovative solutions through code. I enjoy exploring new technologies and honing my
-                        skills in web development, programming, and system design. While I’m still early in my journey,
-                        my enthusiasm for learning and creating drives me to take on new challenges and grow as a
-                        developer. I’m excited to contribute to meaningful projects and make an impact in the tech
-                        world. </p>
+                        As a front-end web developer with a strong background in Information Technology, I specialize in
+                        creating visually appealing, responsive, and high-performance websites that provide a consistent
+                        user experience. With a sharp eye for design and a desire to use cutting-edge web technologies,
+                        I excel at HTML, CSS, JavaScript, and modern frameworks, ensuring clean, efficient code and
+                        user-friendly interfaces. I'm committed to developing ideas into engaging digital experiences
+                        that help organizations thrive online and stay ahead of industry trends.
+                     </p>
                   </motion.div>
                </div>
             </div>
@@ -118,10 +118,10 @@ const About = () => {
                <div className="h-full p-6 rounded-lg shadow-md grid-container flex flex-col justify-evenly">
                   <div className="w-full h-[200px] ">
                      <Canvas>
-                        <ambientLight intensity={0.5} />
+                        <ambientLight intensity={0.5}/>
                         {/* Additional Lights */}
-                        <pointLight position={[5, -5, 5]} intensity={0.8} />
-                        <spotLight position={[0, 5, 10]} angle={0.3} penumbra={0.5} intensity={1} />
+                        <pointLight position={[5, -5, 5]} intensity={0.8}/>
+                        <spotLight position={[0, 5, 10]} angle={0.3} penumbra={0.5} intensity={1}/>
                         <Message/>
                      </Canvas>
                   </div>
@@ -136,8 +136,11 @@ const About = () => {
                            repeat: Infinity,
                            repeatType: "loop",
                         }}
-                        className="text-xl font-poppins text-primary font-semibold text-center">Contact me</motion.p>
-                     <div className="cursor-pointer flex justify-center items-center gap-2 text-secondary hover:text-hover" onClick={handleCopy}>
+                        className="text-xl font-poppins text-primary font-semibold text-center">Contact me
+                     </motion.p>
+                     <div
+                        className="cursor-pointer flex justify-center items-center gap-2 text-secondary hover:text-hover"
+                        onClick={handleCopy}>
                         {hasCopied ?
                            <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8"
                                 xmlns="http://www.w3.org/2000/svg">

@@ -3,7 +3,6 @@ import {Canvas} from "@react-three/fiber";
 import {motion} from "framer-motion";
 import Downbtn from "../components/Downbtn.jsx";
 import Avatar from "../components/Avatar.jsx";
-import Sparkle from "../components/Sparkle.jsx";
 
 
 const Hero = ({animationName}) => {
@@ -39,11 +38,7 @@ const Hero = ({animationName}) => {
             </div>
 
          </motion.div>
-         <div className="w-full -z-20 absolute h-full">
-            <Canvas>
-               <Sparkle/>
-            </Canvas>
-         </div>
+
          <div className={"absolute bottom-16 z-50"}>
             <Downbtn/>
          </div>
