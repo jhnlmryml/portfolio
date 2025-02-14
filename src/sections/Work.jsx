@@ -88,56 +88,56 @@ const Work = () => {
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 1.5}}
             className="element  relative py-6 z-10 flex-wrap">
-            <h3 className="absolute text-hover tracking-wide font-poppins font-extrabold text-base sm:text-lg md:text-xl xl:text-2xl">
+            <h3 className="absolute text-prime tracking-wide font-poppins font-extrabold text-base sm:text-lg md:text-xl xl:text-2xl">
                Workshops</h3>
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-20 gap-5 w-full">
 
 
-               <div className='pb-7 bg-gradient-to-t from-slate-950 rounded-xl border border-black-500'>
+               <div className='pb-7 bg-gradient-to-br from-cyan-100 rounded-xl shadow-[0px_0px_1px_rgba(0,0,0,0.3)]'>
 
                   <div
-                     className=" rounded-3xl flex flex-col gap-5 relative sm:p-10 px-5 py-6 ">
-                     <div className="absolute top-0 right-0">
-                        <img src={items.spotlight} alt="spotlight"
-                             className="w-full h-96 object-cover rounded-xl"/>
-                     </div>
-                     <div className="relative flex justify-center">
+                     className=" rounded-3xl flex flex-col gap-5 relative justify-center items-center sm:p-10 px-5 py-6 ">
+
                         <div
-                           className="certi w-full h-full max-w-md rounded-2xl overflow-hidden shadow-lg shadow-black/30">
+                           className="certi w-full h-full max-w-md  overflow-hidden shadow-lg shadow-black/30">
                            <img src={items.pics} alt="certification"
                                 className="w-full h-auto object-cover"/>
                         </div>
 
-                     </div>
+                     {/*</div>*/}
 
-                     <p className="mt-5 text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold text-primary animatedText">{items.title}</p>
-                     <p className="text-sm sm:text-base md:text-md xl:text-lg animatedText text-secondary font-nunito text-justify">{items.subdesc}</p>
+                     <p className="mt-5 text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold text-prime animatedText">{items.title}</p>
+                     <p className="text-sm sm:text-base md:text-md xl:text-lg animatedText text-black-400 font-nunito text-justify">{items.subdesc}</p>
 
                   </div>
                   <div className="flex justify-between items-center mx-8">
                      <button type="button"
                              onClick={() => handleNavigation('prev')}
                              className="arrow rounded-full p-1">
-                        {/*<img src="/assets/left.svg" alt="left arrow" className="w-8 h-8"/>*/}
-                        <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M13 8L9 12M9 12L13 16M9 12H21M19.4845 7C17.8699 4.58803 15.1204 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.1204 21 17.8699 19.412 19.4845 17"
-                              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+                           <polyline points="15.5 5 8.5 12 15.5 19" stroke="currentColor" strokeWidth="2"
+                                     strokeLinecap="round" strokeLinejoin="round"/>
+                           <polyline points="10 19 3 12 10 5" stroke="currentColor" strokeWidth="2"
+                                     strokeLinecap="round" strokeLinejoin="round"/>
+                           <polyline points="21 5 14 12 21 19" stroke="currentColor" strokeWidth="2"
+                                     strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
+
 
                      </button>
 
                      <button type="button"
                              onClick={() => handleNavigation('next')}
                              className="arrow rounded-full p-1  ">
-                        {/*<img src="/assets/right.svg" alt="right arrow" className="w-8 h-8"/>*/}
-                        <svg  viewBox="0 0 24 24" fill="none" className="w-10 h-10"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M11 16L15 12M15 12L11 8M15 12H3M4.51555 17C6.13007 19.412 8.87958 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C8.87958 3 6.13007 4.58803 4.51555 7"
-                              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+                           <polyline id="primary" points="8.5 19 15.5 12 8.5 5" stroke="currentColor" strokeWidth="2"
+                                     strokeLinecap="round" strokeLinejoin="round"/>
+                           <polyline id="primary-2" data-name="primary" points="14 5 21 12 14 19" stroke="currentColor"
+                                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                           <polyline id="primary-3" data-name="primary" points="3 19 10 12 3 5" stroke="currentColor"
+                                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
+
                      </button>
 
                   </div>
@@ -148,13 +148,13 @@ const Work = () => {
 
                   onMouseEnter={() => setIsHovered(true)} // Stop switching on hover
                   onMouseLeave={() => setIsHovered(false)} // Resume switching when hover ends
-                  className='pb-7 bg-slate-950 rounded-xl border border-black-500'>
+                  className='pb-7 bg-gradient-to-tl from-cyan-100 rounded-xl shadow-[0px_0px_1px_rgba(0,0,0,0.3)]'>
 
                   <div
                      onClick={() => setProj((prevProj) => (prevProj === 0 ? 1 : 0))}
                      className=" rounded-3xl flex flex-col gap-5 items-center relative sm:p-10 px-5 py-6 ">
                      <div className="max-lg:px-2 px-1 video">
-                        <video className="w-full xl:h-72 h-64 lg:h-52 object-cover rounded-xl " src={project.src}
+                        <video className="w-full xl:h-72 h-64 lg:h-52 object-cover rounded-xl drop-shadow-xl" src={project.src}
                                autoPlay muted loop
                                playsInline controls={false}/>
                      </div>
@@ -162,7 +162,7 @@ const Work = () => {
                      <div className="relative disc flex justify-center flex-col">
                         <div className="flex flex-row justify-between items-center  my-5 ">
                            <h2
-                              className="text-primary  text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold">{project.title}</h2>
+                              className="text-prime  text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold">{project.title}</h2>
                            <div className="flex flex-row gap-3 justify-center items-center">
                               {project.tags.map((tag, index) => (
                                  <div key={index}
@@ -173,14 +173,14 @@ const Work = () => {
 
                            </div>
                         </div>
-                        <p className="text-secondary font-nunito text-justify text-sm sm:text-base md:text-md xl:text-lg  pb-4">{project.desc}</p>
+                        <p className="text-black-400 font-nunito text-justify text-sm sm:text-base md:text-md xl:text-lg  pb-4">{project.desc}</p>
 
 
                      </div>
 
                   </div>
                   <a
-                     className="anch flex items-center gap-2 cursor-pointer text-white hover:text-hover absolute right-24 bottom-12 max-sm:right-12 max-lg:right-16"
+                     className="anch flex items-center gap-2 cursor-pointer text-teal-950 hover:text-cyan-950 absolute right-12 bottom-12 max-sm:right-8 max-lg:right-10"
                      href={project.link}
                      target="_blank"
                      rel="noreferrer"

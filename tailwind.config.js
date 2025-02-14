@@ -15,23 +15,37 @@ export default {
             nunito: ['Nunito Sans', 'sans-serif'],
             jetbrains: ['JetBrains Mono', 'monospace'],
          },
+         // 27293b
+         // 3D52A0
+         // 7091E6
+         // 8697C4
+         // ADBBDA
+         // EDE8F5
          colors: {
-            primary: "#F5F5F5", // Soft White for clear readability
-            secondary: "#B0BEC5", // Cool Gray for subtle contrast
-            tertiary: "#90A4AE", // Muted Blue-Gray for depth
 
-            activeHover: "#00FFFF", // Neon Cyan for interactive elements
-            highlight: "#cb9100", // Neon Pink for important details
-            hover: "#00E5FF", // Bright Cyan for branding emphasis
-
-            activeBg: "#121212", // True Black for modern elegance
-            hoverBg: "#1E1E1E", // Dark Gray for soft contrast
+            prime: "#27293b",
+            second: "#3D52A0",
+            third: "#7091E6",
+            fourth: "#8697C4",
+            fifth: "#ADBBDA",
+            sixth: "#EDE8F5",
+            // primary: "#F5F5F5", // Soft White for clear readability
+            // secondary: "#B0BEC5", // Cool Gray for subtle contrast
+            // tertiary: "#90A4AE", // Muted Blue-Gray for depth
+            //
+            // activeHover: "#00FFFF", // Neon Cyan for interactive elements
+            // highlight: "#cb9100", // Neon Pink for important details
+            // hover: "#00E5FF", // Bright Cyan for branding emphasis
+            //
+            // activeBg: "#121212", // True Black for modern elegance
+            // hoverBg: "#1E1E1E", // Dark Gray for soft contrast
 
             black: {
                DEFAULT: '#000',
                100: '#010103',
                200: '#0E0E10',
                300: '#1C1C21',
+               400: '#2c2c3b',
                500: '#3A3A49',
                600: '#1A1A1A',
             },

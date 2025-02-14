@@ -18,11 +18,11 @@ const Loading = (props) => {
    return (
       <div
          className={`fixed top-0 left-0 w-full h-full z-[100] transition-opacity duration-1000 pointer-events-none
-  flex items-center justify-center bg-black-200 
+  flex items-center justify-center bg-fifth
   ${started ? "opacity-0" : "opacity-100"}`}
       >
 
-         <div className="text-xl md:text-3xl font-bold font-jetbrains text-primary relative">
+         <div className="text-xl md:text-3xl font-bold font-jetbrains text-second relative">
             <div
                className="absolute left-0 top-0  overflow-hidden truncate text-clip transition-all duration-500"
                style={{

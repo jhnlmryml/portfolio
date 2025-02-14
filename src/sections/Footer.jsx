@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 const Footer = () => {
     return (
         <footer
-            className="mt-32 font-jetbrains border-t bottom-0 border-hover py-10 flex justify-center items-center  mx-28 max-md:mx-2 ">
+            className="mt-32 font-jetbrains border-t-2 bottom-0 border-prime py-10 flex justify-center items-center mx-28 max-md:mx-2 ">
 
 
            <motion.div
@@ -13,7 +13,7 @@ const Footer = () => {
               transition={{duration: 0.6}}
               className="flex gap-3 justify-center items-center flex-row">
 
-              <p className="text-secondary text-sm sm:text-base md:text-md xl:text-lg">© 2025 Jhon Almar. All rights reserved. </p>
+              <p className="text-prime text-sm sm:text-base md:text-md xl:text-lg">© 2025 Jhon Almar. All rights reserved. </p>
               <div className="">
                  <a href="https://github.com/jhnlmryml" target="_blank" rel="noreferrer">
                  <img src="/assets/github.svg" alt="github" className="w-8 h-8 cursor-pointer"/></a>

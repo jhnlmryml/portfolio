@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {useAnimations, useFBX, useGLTF, useVideoTexture, useTexture} from '@react-three/drei';
 import gsap from "gsap";
-import {useGSAP} from "@gsap/react";
 
 const Avatar = ({animationName, ...props}) => {
    const group = useRef();
@@ -32,16 +31,16 @@ const Avatar = ({animationName, ...props}) => {
          actions[animationName].reset().fadeIn(.5).play();
          return () => actions[animationName].fadeOut(0.5);
       }
-   }, [animationName, actions]);
+   }, [actions[animationName]]);
 
    // Define animation configurations
    const animationConfig = {
-      typing: { scale: 3, position: [1.8, -2.4, 0.5], rotation: [0, -2.5, 0] },
+      typing: { scale: 3, position: [1.99, -2.19, 0.25], rotation: [0, -2.5, 0] },
       texting: { scale: 2.8, position: [0, -3.3, 0], rotation: [0, 0.5, 0] },
       default: { scale: 2.9, position: [0, -3.3, 0], rotation: [0, 0, 0] },
    };
 
-   useGSAP(() => {
+   useEffect(() => {
 
       if (desktop.current) desktop.current.visible = animationName === "typing";
       if (phone.current) phone.current.visible = animationName === "texting";
@@ -344,30 +343,34 @@ const Avatar = ({animationName, ...props}) => {
             {/*----chair-----*/}
             <group
                name="whole_boundary_Plane004"
-               rotation={[0, -2.7, 0]}
-               position={[1.6, -2.9, 0.65]}
-               scale={0.29}>
+               rotation={[0, -2.4, 0]}
+               position={[1.98, -2.65, 0.49]}
+               scale={0.3}>
                <mesh
                   name="whole_boundary_Plane004__white_metal_0"
-
+                  castShadow
+                  receiveShadow
                   geometry={nodes.whole_boundary_Plane004__white_metal_0.geometry}
                   material={materials['white_metal.001']}
                />
                <mesh
                   name="whole_boundary_Plane004_black_metal_0"
-
+                  castShadow
+                  receiveShadow
                   geometry={nodes.whole_boundary_Plane004_black_metal_0.geometry}
                   material={materials['black_metal.001']}
                />
                <mesh
                   name="whole_boundary_Plane004_chair_material_0"
-
+                  castShadow
+                  receiveShadow
                   geometry={nodes.whole_boundary_Plane004_chair_material_0.geometry}
                   material={materials['chair_material.001']}
                />
                <mesh
                   name="whole_boundary_Plane004_plastic_0"
-
+                  castShadow
+                  receiveShadow
                   geometry={nodes.whole_boundary_Plane004_plastic_0.geometry}
                   material={materials['plastic.003']}
                />
@@ -375,9 +378,9 @@ const Avatar = ({animationName, ...props}) => {
 
             {/*----desktop-----*/}
             <group
-               rotation={[0, 0.9, 0]}
-               position={[0, -2.6, -2]}
-               scale={2.8}>
+               rotation={[0, 0.99, 0]}
+               position={[.5, -2.52, -2]}
+               scale={2.9}>
 
                <mesh
                   name="Cube_Material014_0"
@@ -521,7 +524,6 @@ const Avatar = ({animationName, ...props}) => {
    )
 };
 
-export default Avatar;
 useGLTF.preload('models/avatar.glb');
 
 useFBX.preload('animations/Waving.fbx');
@@ -529,4 +531,5 @@ useFBX.preload('animations/Typing.fbx');
 useFBX.preload('animations/Gesture.fbx');
 useFBX.preload('animations/Texting.fbx');
 
+export default Avatar;
 

@@ -16,14 +16,20 @@
 }
 
 body {
-    background: #000513;
+    /*background: #000513;*/
     /*background: #040431;*/
+    background-color:hsla(263,39%,93%,1);
+    background-image:
+            radial-gradient(at 31% 72%, hsla(221,37%,76%,1) 0px, transparent 50%),
+            radial-gradient(at 80% 13%, hsla(223,34%,64%,1) 0px, transparent 50%),
+            radial-gradient(at 11% 13%, hsla(223,70%,67%,1) 0px, transparent 50%),
+            radial-gradient(at 100% 99%, hsla(227,44%,43%,1) 0px, transparent 50%);
 
 }
 
 header {
-    background: rgba(255, 255, 255, 0);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.09);
+    background: rgba(237, 232, 245, .61);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
 
@@ -75,7 +81,7 @@ img {
 
     .nav-side {
         @apply top-12 right-5 absolute overflow-hidden rounded-xl w-36 py-5 px-3
-        z-50 sm:hidden block select-none border border-black-300 bg-black-200;
+        z-50 sm:hidden block select-none border border-third shadow-2xl bg-fifth;
 
 
     }
@@ -94,36 +100,52 @@ img {
     }
 
     .nav-a {
-        @apply items-center justify-center flex text-sm md:text-base  max-sm:text-xs;
+        @apply items-center justify-center flex text-sm md:text-base max-sm:text-xs relative;
     }
+
+    .nav-a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: currentColor; /* Use the text color for the line */
+        transition: width 0.3s ease-in-out;
+    }
+
+    .nav-a:hover::after {
+        width: 100%;
+    }
+
 
     .btn_arrow {
         @apply w-6 h-6 object-contain invert brightness-0;
     }
 
     .arrow {
-        @apply text-primary cursor-pointer active:scale-95 transition-all rounded-full
-         hover:text-cyan-500;
+        @apply text-teal-950 cursor-pointer active:scale-95 transition-all rounded-full
+         hover:text-cyan-900;
     }
 
     .grid-container {
-        @apply border border-black-500 bg-slate-950;
+        @apply border border-sixth bg-fifth
     }
 }
 
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+/*@keyframes float {*/
+/*    0% {*/
+/*        transform: translateY(0);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translateY(-10px);*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateY(0);*/
+/*    }*/
+/*}*/
 
-.animate-float {
-    animation: float 4s ease-in-out infinite;
-}
+/*.animate-float {*/
+/*    animation: float 4s ease-in-out infinite;*/
+/*}*/

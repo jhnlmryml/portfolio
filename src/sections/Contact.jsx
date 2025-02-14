@@ -81,11 +81,11 @@ const Contact = () => {
             >
                <div className="mb-7 text-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                   <h3
-                     className="text-hover tracking-wide font-poppins font-semibold my-2 text-base sm:text-lg md:text-xl xl:text-2xl">
+                     className="text-prime tracking-wide font-poppins font-semibold my-2 text-base sm:text-lg md:text-xl xl:text-2xl">
                      Let’s Create Something Great!!
                   </h3>
                   <motion.p
-                     className="text-justify tracking-wide font-nunito text-primary text-sm sm:text-base md:text-md xl:text-lg">
+                     className="text-justify tracking-wide font-nunito text-prime text-sm sm:text-base md:text-md xl:text-lg">
                      From vision to execution, I’m committed to delivering solutions that drive success. Let’s
                      connect and bring your
                      ideas to life.
@@ -100,7 +100,7 @@ const Contact = () => {
                   {/* Name Input */}
                   <div className="mt-3">
                      <label htmlFor="name" className="block mb-2">
-                        <span className="text-primary font-poppins text-sm sm:text-base md:text-lg xl:text-xl">Full Name</span>
+                        <span className="text-prime font-poppins text-sm font-extrabold sm:text-base md:text-lg xl:text-xl">Full Name</span>
                      </label>
                      <div className="flex items-center border border-gray-300 rounded-lg px-3 bg-neutral-100">
                         <img src="/assets/user.svg" alt="Name Icon" className="w-5 h-5 sm:w-6 sm:h-6 mr-2"/>
@@ -121,7 +121,7 @@ const Contact = () => {
                   <div className="mt-3">
                      <label htmlFor="email" className="block mb-2">
                             <span
-                               className="text-primary font-poppins font-extrabold text-sm sm:text-base md:text-lg xl:text-xl">Email Address</span>
+                               className="text-prime font-poppins font-extrabold text-sm sm:text-base md:text-lg xl:text-xl">Email Address</span>
                      </label>
                      <div className="flex items-center border border-gray-300 rounded-lg px-3 bg-neutral-100">
                         <img src="/assets/email.svg" alt="Email Icon" className="w-5 h-5 sm:w-6 sm:h-6 mr-2"/>
@@ -142,7 +142,7 @@ const Contact = () => {
                   <div className="mt-3">
                      <label htmlFor="message" className="block mb-2">
                             <span
-                               className="text-primary text-sm font-poppins font-extrabold sm:text-base md:text-lg xl:text-xl">Your Message</span>
+                               className="text-prime text-sm font-poppins font-extrabold sm:text-base md:text-lg xl:text-xl">Your Message</span>
                      </label>
                      <div className="flex items-start border border-gray-300 rounded-lg px-3 bg-neutral-100">
                         <img src="/assets/message.svg" alt="Message Icon"
