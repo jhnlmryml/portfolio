@@ -70,7 +70,7 @@ const About = () => {
                      transition={{duration: 1}}
                      className={"flex justify-center"}>
                      <div className="relative w-[380px] h-[380px] mx-auto">
-                        <img src="/src/assets/svg-blob.svg" alt="" className="absolute w-full h-full"/>
+                        <img src="/assets/svg-blob.svg" alt="" className="absolute w-full h-full"/>
                         <img
                            src={import.meta.env.VITE_IMAGE_PATH}
                            alt="picture"

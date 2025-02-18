@@ -134,7 +134,7 @@ const Navbar = ({ setAnimationName }) => {
                   onClick={toggleMenu}
                   className="focus:outline-none sm:hidden flex z-30"
                >
-                  <img src={isOpen ? "/src/assets/close.svg" : "/src/assets/menu.svg"} alt="menu"
+                  <img src={isOpen ? "/assets/close.svg" : "/assets/menu.svg"} alt="menu"
                        className="h-6 w-7 hover:scale-150 duration-500 ease-in-out transition-all"/>
                </button>
                <nav className="sm:flex hidden">

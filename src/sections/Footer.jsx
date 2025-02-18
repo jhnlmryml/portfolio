@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="flex items-center gap-4">
                <a href="https://github.com/jhnlmryml" target="_blank" rel="noreferrer">
                   <motion.img
-                     src="/src/assets/github.svg"
+                     src="/assets/github.svg"
                      alt="github"
                      className="w-8 h-8 cursor-pointer transition-transform transform hover:scale-110 hover:rotate-12"
                      whileHover={{ scale: 1.1, rotate: 10 }}
