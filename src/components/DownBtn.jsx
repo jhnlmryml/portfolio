@@ -9,7 +9,7 @@ const fadeVariants = {
    },
 };
 
-const Downbtn = () => {
+const DownBtn = () => {
    const handleScroll = () => {
       const nextSection = document.getElementById("about");
       if (nextSection) {
@@ -40,4 +40,4 @@ const Downbtn = () => {
    );
 };
 
-export default Downbtn;
+export default DownBtn;

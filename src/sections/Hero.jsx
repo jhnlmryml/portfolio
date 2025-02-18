@@ -1,7 +1,7 @@
 import React from 'react'
 import {Canvas} from "@react-three/fiber";
 import {motion} from "framer-motion";
-import Downbtn from "../components/Downbtn.jsx";
+import DownBtn from "../components/DownBtn.jsx";
 import Avatar from "../components/Avatar.jsx";
 import {ContactShadows} from "@react-three/drei";
 import Blobs from "../components/Blobs.jsx";
@@ -11,7 +11,7 @@ const Hero = ({animationName}) => {
 
    return (
 
-      <section id="home" className="relative h-dvh w-full justify-center items-center flex ">
+      <section id="home" className="relative h-dvh w-full justify-center items-center flex mb-10 element">
 
          <motion.div
             initial={{opacity: 0}}
@@ -20,7 +20,7 @@ const Hero = ({animationName}) => {
             className="flex items-center  w-full flex-responsive">
 
             <div
-               className="greet position-element font-jetbrains absolute top-[5.5rem] text-prime
+               className="greet position-element font-jetbrains absolute top-[5.5rem] text-black-200
                flex flex-col items-center justify-center text-center">
                <p className=" font-semibold">Hi! I am <span className="text-slate-900 font-black"> Jhon Almar </span>
                </p>
@@ -53,13 +53,18 @@ const Hero = ({animationName}) => {
 
          </motion.div>
          <div className="w-full -z-20 absolute h-full">
-            <Canvas >
-               <ambientLight intensity={0.8}/>
+            <Canvas>
+
+               <directionalLight position={[2, 5, 5]} intensity={.2} castShadow shadow-mapSize={[2048, 2048]}/>
+               <spotLight position={[-5, 3, 2]} intensity={0.4} angle={0.3} penumbra={0.8} color={"#ffddaa"}/>
+               <spotLight position={[30, -9, -4]} intensity={0.9} angle={0.3} penumbra={0.8} color={"#adbbda"}/>
+               <directionalLight position={[-2, 4, -3]} intensity={0.7} color={"#88aaff"}/>
+               <ambientLight intensity={.2}/>
                <Blobs/>
             </Canvas>
          </div>
          <div className={"absolute bottom-16"}>
-            <Downbtn/>
+            <DownBtn/>
          </div>
       </section>
 

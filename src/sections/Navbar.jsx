@@ -20,13 +20,12 @@ const NavItems = ({ onClick = () => {}, activeTab, setActiveTab, setAnimationNam
    return (
       <ul className="nav-ul ">
          {navLinks.map(({ id, name, href, animation }) => (
-            <li key={id} className={`nav-li ${activeTab === name ? "max-sm:bg-sixth" : "max-sm:hover:bg-fourth"}`}>
+            <li key={id} className={`nav-li ${activeTab === name ? "max-sm:bg-prime" : "max-sm:hover:bg-second"}`}>
                <a
                   href={href}
-                  className={`nav-a p-1 font-poppins ${activeTab === name ? "text-black-100 font-semibold" : "text-prime"}`}
+                  className={`nav-a p-1 font-poppins ${activeTab === name ? "text-sixth font-semibold" : "text-fifth"}`}
                   onClick={(e) => {
-                     e.preventDefault(); // Prevent default anchor behavior
-                     setActiveTab(name);
+                     e.preventDefault();
                      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
                      onClick();
                   }}
@@ -113,11 +112,11 @@ const Navbar = ({ setAnimationName }) => {
 
 
    return (
-      <header className="fixed top-0 left-0 right-0 z-50  h-16 sm:h-20 w-full">
-         <div className="max-w-7xl mx-auto">
+      <header className="fixed top-0 left-0 right-0 z-50  h-16 sm:h-20 w-full bg-prime bg-opacity-90 backdrop-blur-md shadow-md">
+         <div className="max-w-7xl mx-auto max-xl:mx-5">
             <div className="flex items-center justify-between mx-auto p-4 sm:p-5">
                <motion.div
-                  className="font-poppins  text-base font-black sm:text-xl md:text-2xl"
+                  className="font-poppins  text-base font-black sm:text-xl md:text-2xl text-sixth"
                   variants={container}
                   initial="hidden"
                   animate="visible"
@@ -135,7 +134,7 @@ const Navbar = ({ setAnimationName }) => {
                   onClick={toggleMenu}
                   className="focus:outline-none sm:hidden flex z-30"
                >
-                  <img src={isOpen ? "assets/close.svg" : "assets/menu.svg"} alt="menu"
+                  <img src={isOpen ? "/src/assets/close.svg" : "/src/assets/menu.svg"} alt="menu"
                        className="h-6 w-7 hover:scale-150 duration-500 ease-in-out transition-all"/>
                </button>
                <nav className="sm:flex hidden">

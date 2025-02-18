@@ -53,39 +53,38 @@ const About = () => {
    }, [rotated]);
 
    return (
-      <section className="pt-20 max-sm:pt-10" id="about">
+      <section className="pt-10 sm:pt-32" id="about">
          <motion.div
-            initial={{opacity: 0,}}
-            whileInView={{opacity: 1,}}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
             transition={{duration: 1.9}}
             className="grid xl:grid-cols-3 xl:grid-rows-2 md:grid-cols-2 grid-cols-1 gap-5 element"
          >
 
-            <div className="col-span-1 xl:row-span-2">
-               <div className="h-full pt-0 p-6 rounded-lg shadow-md grid-container ">
+            <div className="col-span-1 xl:row-span-2 ">
+               <div className="h-full p-6 rounded-lg shadow-md grid-container ">
 
                   <motion.div
                      initial={{opacity: 0, scale: 0}}
                      whileInView={{opacity: 1, scale: 1}}
                      transition={{duration: 1}}
                      className={"flex justify-center"}>
-                     <div className="relative w-[450px] h-[450px] mx-auto">
-                        <img src="/assets/svg-blob.svg" alt="" className="absolute w-full h-full"/>
+                     <div className="relative w-[380px] h-[380px] mx-auto">
+                        <img src="/src/assets/svg-blob.svg" alt="" className="absolute w-full h-full"/>
                         <img
                            src={import.meta.env.VITE_IMAGE_PATH}
                            alt="picture"
-                           className="w-full h-full object-contain drop-shadow-[0_-15px_40px_rgba(0,0,0,0.5)] border-b-2 border-b-prime "
+                           className="w-full h-full object-cover drop-shadow-[0_-15px_40px_rgba(0,0,0,0.5)] border-b-2 border-b-prime "
                         />
                      </div>
                   </motion.div>
-
 
                   <motion.div
                      initial={{opacity: 0, x: -20}}
                      whileInView={{opacity: 1, x: 0}}
                      transition={{duration: 1.6}}
                      className="mt-4 ">
-                     <p className=" py-2 text-xl font-poppins text-prime font-semibold">I’m Jhon Almar</p>
+                     <p className="py-2 text-xl font-poppins text-prime font-semibold">I’m Jhon jhon 😊</p>
                      <p className="text-black-400 font-nunito mt-2 text-justify">
                         As a front-end web developer with a strong background in Information Technology, I specialize in
                         creating visually appealing, responsive, and high-performance websites that provide a consistent
@@ -98,16 +97,14 @@ const About = () => {
                </div>
             </div>
 
-
             <div className="xl:col-span-2 xl:row-span-1">
                <div className="h-full p-6 rounded-lg shadow-md grid-container">
-
                   <div className="my-2">
-                     <p className="text-xl font-poppins text-prime font-semibold">Tech Stack</p>
+                     <p className="text-xl font-poppins text-prime font-semibold">Tech Stack 💻</p>
                      <p className="text-black-400 font-nunito mt-2 text-justify">
                         I utilize a wide range of languages, frameworks, and tools to build powerful and scalable
                         applications. Each solution is designed with precision, ensuring high performance and
-                        reliability. My focus is on innovation and creating seamless experiences that make an impact.
+                        reliability. My focus is on innovation and creating seamless experiences that make an impact. 🚀
                      </p>
                   </div>
                   <SkillsSection/>
@@ -119,7 +116,6 @@ const About = () => {
                   <div className="w-full h-[200px] ">
                      <Canvas>
                         <ambientLight intensity={0.5}/>
-                        {/* Additional Lights */}
                         <pointLight position={[5, -5, 5]} intensity={0.8}/>
                         <spotLight position={[0, 5, 10]} angle={0.3} penumbra={0.5} intensity={1}/>
                         <ContactShadows
@@ -148,7 +144,7 @@ const About = () => {
                         className="text-xl font-poppins text-prime font-semibold text-center">Contact me
                      </motion.p>
                      <div
-                        className="cursor-pointer flex justify-center items-center gap-2 text-black-400 hover:text-second"
+                        className="cursor-pointer flex justify-center items-center gap-2 hover:text-second text-black-400"
                         onClick={handleCopy}>
                         {hasCopied ?
                            <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8"
@@ -160,7 +156,6 @@ const About = () => {
                                  d="M11.1 8H6.9C3.4 8 2 9.4 2 12.9V17.1C2 20.6 3.4 22 6.9 22H11.1C14.6 22 16 20.6 16 17.1V12.9C16 9.4 14.6 8 11.1 8ZM12.29 13.65L8.58 17.36C8.44 17.5 8.26 17.57 8.07 17.57C7.88 17.57 7.7 17.5 7.56 17.36L5.7 15.5C5.42 15.22 5.42 14.77 5.7 14.49C5.98 14.21 6.43 14.21 6.71 14.49L8.06 15.84L11.27 12.63C11.55 12.35 12 12.35 12.28 12.63C12.56 12.91 12.57 13.37 12.29 13.65Z"
                                  fill="#01ab9a"/>
                            </svg>
-
                            : <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8"
                                   xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -170,7 +165,7 @@ const About = () => {
                                  d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z"
                                  fill="currentColor"/>
                            </svg>}
-                        <p className="lg:text-2xl md:text-xl font-medium font-nunito ">yjhonalmar@gmail.com</p>
+                        <p className={`lg:text-2xl md:text-xl font-medium font-nunito ${hasCopied ? 'text-[#01ab9a]' : 'text-black-400 hover:text-second'}`}>yjhonalmar@gmail.com</p>
                      </div>
                   </div>
                </div>
@@ -180,7 +175,7 @@ const About = () => {
                <div
                   onMouseOver={() => setRotated(false)}
                   onMouseOut={() => setRotated(true)}
-                  className="h-full p-6 rounded-lg shadow-md flex flex-col items-center justify-center  grid-container space-y-6"
+                  className="h-full p-6 rounded-lg shadow-md flex flex-col items-center justify-center grid-container space-y-6"
                >
                   {/* Globe Container */}
                   <div className="rounded-3xl w-full flex justify-center items-center">
@@ -224,7 +219,6 @@ const About = () => {
                            el.appendChild(label);
                            return el;
                         }}
-
                      />
                   </div>
 
@@ -237,15 +231,15 @@ const About = () => {
                         whileInView={{opacity: 1, y: 0}}
                         transition={{duration: 1.6}}
                         className="text-sm font-nunito text-black-400 mt-2">
-                        Based in Pampanga, Philippines and open to remote work worldwide.
+                        Based in Pampanga, Philippines and open to remote work worldwide.💼
                      </motion.p>
                   </div>
                </div>
             </div>
 
-
          </motion.div>
       </section>
+
    )
 }
 export default About

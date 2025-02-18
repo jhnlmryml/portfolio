@@ -35,7 +35,7 @@ const Avatar = ({animationName, ...props}) => {
 
    // Define animation configurations
    const animationConfig = {
-      typing: { scale: 3, position: [1.99, -2.19, 0.25], rotation: [0, -2.5, 0] },
+      typing: { scale: 3, position: [1.49, -2.19, 0.25], rotation: [0, -2.5, 0] },
       texting: { scale: 2.8, position: [0, -3.3, 0], rotation: [0, 0.5, 0] },
       default: { scale: 2.9, position: [0, -3.3, 0], rotation: [0, 0, 0] },
    };
@@ -338,7 +338,8 @@ const Avatar = ({animationName, ...props}) => {
 
 
          {/*----pc setup-----*/}
-         <group ref={desktop}>
+         <group ref={desktop} position={[-0.52,0,0]}>
+
 
             {/*----chair-----*/}
             <group
