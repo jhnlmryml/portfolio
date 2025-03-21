@@ -191,8 +191,8 @@ const About = () => {
                         backgroundImageOpacity={0.5}
                         ref={globeEl}
                         animateIn={true}
-                        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-                        bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                        globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
+                        bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
                         htmlElementsData={[{lat: 15.5794, lng: 120.6200,}]}
                         htmlElement={(d) => {
                            const el = document.createElement("div");
