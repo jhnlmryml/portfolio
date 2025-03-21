@@ -84,7 +84,7 @@ const About = () => {
                      whileInView={{opacity: 1, x: 0}}
                      transition={{duration: 1.6}}
                      className="mt-4 ">
-                     <p className="py-2 text-xl font-poppins text-prime font-semibold">I’m Jhon jhon 😊</p>
+                     <p className="py-2 text-xl font-poppins text-prime font-semibold">I’m Jhon Almar 😊</p>
                      <p className="text-black-400 font-nunito mt-2 text-justify">
                         As a front-end web developer with a strong background in Information Technology, I specialize in
                         creating visually appealing, responsive, and high-performance websites that provide a consistent
