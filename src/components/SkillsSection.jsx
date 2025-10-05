@@ -19,7 +19,7 @@ const SkillsSection = () => {
                               transition: {duration: 1, ease: "easeInOut",},
                            }}
                            whileTap={{scale: 0.9}}
-                           className="w-10 h-10 items-center justify-center flex">
+                           className="w-10 h-10 items-center justify-center flex drop-shadow-[0_0_40px_rgba(0,0,0,0.5)]">
                            <img src={skill.icon} alt={skill.title}/>
                         </motion.div>
 
@@ -42,7 +42,7 @@ const SkillsSection = () => {
                               {skill.title}
                            </motion.h3>
                            <motion.div
-                              className="h-2 w-full bg-tertiary rounded-full mt-2"
+                              className="h-2 w-full bg-fourth rounded-full mt-2"
                               initial={{
                                  scaleX: 0,
                                  originX: 0,
@@ -58,7 +58,7 @@ const SkillsSection = () => {
                               }}
                            >
                               <motion.div
-                                 className="h-full bg-gradient-to-r from-amber-600 to-amber-500 rounded-full "
+                                 className="h-full bg-gradient-to-r from-blue-900 to-blue-800 rounded-full "
                                  style={{width: `${skill.level}%`}}
                                  initial={{
                                     scaleX: 0,

@@ -63,7 +63,7 @@ export const projects = [
       title: 'Todo App',
       desc: 'A powerful and intuitive To Do App designed to optimize productivity and task management. Featuring a sleek and responsive interface built with React, this app allows users to seamlessly organize, track, and prioritize tasks.',
       src: '/video/todo.mp4',
-      link: 'https://jhnlmryml.github.io/todo-app/',
+      link: 'https://jhnlmryml.github.io/calculator/',
       tags: [
          {
             id: 1,
@@ -87,7 +87,7 @@ export const projects = [
       title: 'Calculator',
       desc: 'A sleek and responsive calculator application built with React, designed to deliver fast and accurate results for essential arithmetic operations. Its user-friendly interface ensures smooth interaction, making it ideal for both quick calculations and everyday use.',
       src: '/video/calculator.mp4',
-      link: 'https://jhnlmryml.github.io/calculator/',
+      link: 'https://jhnlmryml.github.io/todo-app/',
       tags: [
          {
             id: 1,

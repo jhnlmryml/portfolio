@@ -8,21 +8,21 @@ import Footer from "./sections/Footer.jsx";
 import Loading from "./components/Loading.jsx";
 
 const App = () => {
-    const [animationName, setAnimationName] = useState('waving');
+   const [animationName, setAnimationName] = useState('waving');
    const [started, setStarted] = useState(false)
-    return (
-       <>
-          <Loading started={started} setStarted={setStarted} />
-          <main>
-             <Navbar setAnimationName={setAnimationName}/>
-             <Hero animationName={animationName} />
-             <About  />
-             <Work/>
-             <Contact/>
-             <Footer/>
-          </main>
-       </>
+   return (
+      <>
+         <Loading started={started} setStarted={setStarted} />
+         <main>
+            <Navbar setAnimationName={setAnimationName}/>
+            <Hero animationName={animationName} />
+            <About  />
+            <Work/>
+            <Contact/>
+            <Footer/>
+         </main>
+      </>
 
-    )
+   )
 }
 export default App

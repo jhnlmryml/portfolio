@@ -9,7 +9,7 @@ const myItems = works.length;
 const Work = () => {
    const [selectedItems, setSelectedItems] = useState(0)
    const [isHovered, setIsHovered] = useState(false); // Track hover state
-   const [onChange, setOnChange] = useState(0);
+   // const [onChange, setOnChange] = useState(0);
    const [proj, setProj] = useState(0)
    const project = projects[proj]
    const items = works[selectedItems];
@@ -25,13 +25,20 @@ const Work = () => {
 
 
    useGSAP(() => {
-      gsap.fromTo(`.animatedText`, {opacity: 0}, {
+      gsap.fromTo(`.animText`, {opacity: 0, y: 30}, {
          opacity: 1,
-         duration: 1,
+         y: 0,
          stagger: 0.2,
+         duration: 1.5,
          ease: 'power2.inOut',
       });
-      gsap.fromTo(`.certi`, {opacity: 0, y: -40}, {
+      gsap.fromTo(`.animTitle`, {opacity: 0}, {
+         opacity: 1,
+         stagger: 0.2,
+         duration: 1.5,
+         ease: 'power2.inOut',
+      });
+      gsap.fromTo(`.certi`, {opacity: 0, y: -20}, {
          opacity: 1,
          y: 0,
          duration: 1,
@@ -45,7 +52,7 @@ const Work = () => {
 
       if (!isHovered) {
          interval = setInterval(() => {
-            setProj((prevProj) => (prevProj === 0 ? 1 : 0));
+            setProj((prevProj) => (prevProj + 1) % 4)
          }, 5000);
       }
 
@@ -56,23 +63,22 @@ const Work = () => {
 
 
    useGSAP(() => {
-      gsap.fromTo(`.disc`, {opacity: 0, y: 50}, {
+      gsap.fromTo(`.disc`, {opacity: 0, y: 30}, {
          opacity: 1,
          y: 0,
          stagger: 0.2,
          duration: 1.5,
          ease: 'power2.inOut',
       });
-      gsap.fromTo(`.video`, {opacity: 0, y: -40}, {
+      gsap.fromTo(`.video`, {opacity: 0, y: -20}, {
          opacity: 1,
          stagger: 0.2,
          y: 0,
          duration: 1.5,
          ease: 'power2.inOut',
       });
-      gsap.fromTo(`.anch`, {opacity: 0, x: 50}, {
+      gsap.fromTo(`.animName`, {opacity: 0}, {
          opacity: 1,
-         x: 0,
          stagger: 0.2,
          duration: 1.5,
          ease: 'power2.inOut',
@@ -82,134 +88,164 @@ const Work = () => {
 
 
    return (
-      <section className="pt-20 max-sm:pt-10" id="work">
+      <section className="py-32 max-sm:pt-10 text-white" id="work">
          <motion.div
-            initial={{opacity: 0, y: 40 }}
+            initial={{opacity: 0, y: 40}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 1.5}}
-            className="element  relative py-6 z-10 flex-wrap">
-            <h3 className="absolute text-hover tracking-wide font-poppins font-extrabold text-base sm:text-lg md:text-xl xl:text-2xl">
-               Workshops</h3>
-            <div className="grid lg:grid-cols-2 grid-cols-1 mt-20 gap-5 w-full">
+            className="element relative py-10 z-10 flex-wrap"
+         >
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 w-full px-4 md:px-10">
+               {/* Certificates Section */}
+               <motion.div
+                  whileHover={{scale: 1.05}}
+                  transition={{duration: 0.5}}
+                  className="bg-gradient-to-br from-third to-fourth rounded-2xl shadow-2xl p-8"
+               >
+                  <h3
+                     className="text-second font-poppins font-extrabold text-center text-2xl mb-5 hover:scale-105 transition-transform border-b pb-4">
+                     🏅 Certificates ✅
+                  </h3>
 
+                  <div className="rounded-3xl flex flex-col gap-6 items-center">
+                     <motion.div
+                        whileHover={{scale: 1.1}}
+                        transition={{duration: 0.3}}
+                        className="w-full max-w-md overflow-hidden shadow-xl rounded-lg certi"
+                     >
+                        <img
+                           src={items.pics}
+                           alt="Certification"
+                           className="w-full h-[230px] object-fit rounded-lg shadow-lg "
+                        />
+                     </motion.div>
 
-               <div className='pb-7 bg-gradient-to-t from-slate-950 rounded-xl border border-black-500'>
+                     <div className="flex justify-between items-center w-11/12">
+                        <button
+                           onClick={() => handleNavigation("prev")}
+                           className="bg-fourth hover:bg-fifth rounded-full p-2 transition-all duration-300"
+                        >
+                           ◀️
+                        </button>
 
-                  <div
-                     className=" rounded-3xl flex flex-col gap-5 relative sm:p-10 px-5 py-6 ">
-                     <div className="absolute top-0 right-0">
-                        <img src={items.spotlight} alt="spotlight"
-                             className="w-full h-96 object-cover rounded-xl"/>
+                        <h3
+                           className="text-prime text-center font-poppins py-2 px-6 rounded-full bg-sixth font-black text-lg sm:text-xl animTitle">
+                           {items.title}
+                        </h3>
+
+                        <button
+                           onClick={() => handleNavigation("next")}
+                           className="bg-fourth hover:bg-fifth rounded-full p-2 transition-all duration-300"
+                        >
+                           ▶️
+                        </button>
                      </div>
-                     <div className="relative flex justify-center">
-                        <div
-                           className="certi w-full h-full max-w-md rounded-2xl overflow-hidden shadow-lg shadow-black/30">
-                           <img src={items.pics} alt="certification"
-                                className="w-full h-auto object-cover"/>
-                        </div>
 
-                     </div>
-
-                     <p className="mt-5 text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold text-primary animatedText">{items.title}</p>
-                     <p className="text-sm sm:text-base md:text-md xl:text-lg animatedText text-secondary font-nunito text-justify">{items.subdesc}</p>
-
+                     <p className="text-white text-sm sm:text-base text-center w-11/12 animText">
+                        {items.subdesc}
+                     </p>
                   </div>
-                  <div className="flex justify-between items-center mx-8">
-                     <button type="button"
-                             onClick={() => handleNavigation('prev')}
-                             className="arrow rounded-full p-1">
-                        {/*<img src="/assets/left.svg" alt="left arrow" className="w-8 h-8"/>*/}
-                        <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M13 8L9 12M9 12L13 16M9 12H21M19.4845 7C17.8699 4.58803 15.1204 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.1204 21 17.8699 19.412 19.4845 17"
-                              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+               </motion.div>
 
-                     </button>
+               {/* Projects Section */}
+               <motion.div
+                  whileHover={{scale: 1.05}}
+                  transition={{duration: 0.5}}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className="bg-gradient-to-tl from-third to-fifth rounded-2xl shadow-2xl p-8 relative cursor-pointer"
+               >
+                  <h3
+                     className="text-second font-poppins font-extrabold text-center text-2xl hover:scale-105 transition-transform mb-5 border-b pb-4">
+                     🚀 Projects 🔥
+                  </h3>
 
-                     <button type="button"
-                             onClick={() => handleNavigation('next')}
-                             className="arrow rounded-full p-1  ">
-                        {/*<img src="/assets/right.svg" alt="right arrow" className="w-8 h-8"/>*/}
-                        <svg  viewBox="0 0 24 24" fill="none" className="w-10 h-10"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M11 16L15 12M15 12L11 8M15 12H3M4.51555 17C6.13007 19.412 8.87958 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C8.87958 3 6.13007 4.58803 4.51555 7"
-                              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                     </button>
+                  <motion.div
+                     whileHover={{scale: 1.02}}
+                     transition={{duration: 0.3}}
+                     onClick={() => setProj((prevProj) => (prevProj + 1) % 4)}
+                     className="rounded-3xl flex flex-col gap-6 items-center"
+                  >
+                     {project.src ? (
+                        <video
+                           className="w-full h-[230px] object-cover rounded-lg shadow-xl max-w-md video"
+                           src={project.src}
+                           autoPlay
+                           muted
+                           loop
+                           playsInline
+                           controls={false}
+                        />
+                     ) : (
+                        <img
+                           className="w-full h-[230px] object-cover rounded-lg shadow-xl max-w-md"
+                           src={project.image}
+                           alt={project.title}
+                        />
+                     )}
 
-                  </div>
-               </div>
-               {/*    projects */}
 
-               <div
+                     <div className="relative  flex flex-col text-center pb-4">
+                        <h2
+                           className="text-prime font-poppins py-2 px-6 rounded-full bg-sixth font-black text-lg sm:text-xl animName">
+                           {project.title}
+                        </h2>
 
-                  onMouseEnter={() => setIsHovered(true)} // Stop switching on hover
-                  onMouseLeave={() => setIsHovered(false)} // Resume switching when hover ends
-                  className='pb-7 bg-slate-950 rounded-xl border border-black-500'>
-
-                  <div
-                     onClick={() => setProj((prevProj) => (prevProj === 0 ? 1 : 0))}
-                     className=" rounded-3xl flex flex-col gap-5 items-center relative sm:p-10 px-5 py-6 ">
-                     <div className="max-lg:px-2 px-1 video">
-                        <video className="w-full xl:h-72 h-64 lg:h-52 object-cover rounded-xl " src={project.src}
-                               autoPlay muted loop
-                               playsInline controls={false}/>
-                     </div>
-
-                     <div className="relative disc flex justify-center flex-col">
-                        <div className="flex flex-row justify-between items-center  my-5 ">
-                           <h2
-                              className="text-primary  text-base sm:text-lg md:text-xl xl:text-2xl font-poppins font-semibold">{project.title}</h2>
-                           <div className="flex flex-row gap-3 justify-center items-center">
+                        <p className="text-white text-sm sm:text-base mt-5 disc">
+                           {project.desc}
+                        </p>
+                        <div className="flex justify-between items-center w-full mt-6 disc ">
+                           <div className="flex justify-between gap-3">
                               {project.tags.map((tag, index) => (
-                                 <div key={index}
-                                      className=" w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center">
+                                 <motion.div
+                                    key={index}
+                                    whileHover={{scale: 1.2}}
+                                    className="w-10 h-10 rounded-md p-2 bg-black bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center"
+                                 >
                                     <img src={tag.path} alt={tag.name}/>
-                                 </div>
+                                 </motion.div>
                               ))}
 
                            </div>
+                           {project.link && (
+                              <motion.a
+                                 whileHover={{scale: 1.1}}
+                                 className="flex items-center gap-2 text-teal-300 hover:text-cyan-400  transition-all duration-300"
+                                 href={project.link}
+                                 target="_blank"
+                                 rel="noreferrer"
+                              >
+                                 <p className="font-nunito">Check Live Site</p>
+                                 <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    stroke="currentColor"
+                                    className="w-5 h-5"
+                                 >
+                                    <path
+                                       d="M7 17L17 7M17 7H8M17 7V16"
+                                       stroke="currentColor"
+                                       strokeWidth="2"
+                                       strokeLinecap="round"
+                                       strokeLinejoin="round"
+                                    ></path>
+                                 </svg>
+                              </motion.a>
+                           )}
+
                         </div>
-                        <p className="text-secondary font-nunito text-justify text-sm sm:text-base md:text-md xl:text-lg  pb-4">{project.desc}</p>
-
-
                      </div>
 
-                  </div>
-                  <a
-                     className="anch flex items-center gap-2 cursor-pointer text-white hover:text-hover absolute right-24 bottom-12 max-sm:right-12 max-lg:right-16"
-                     href={project.link}
-                     target="_blank"
-                     rel="noreferrer"
-                  >
-                     <p className={"font-nunito"}>Check Live Site</p>
-                     <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="currentColor"
-                        className="w-5 h-5"
-                     >
-                        <path
-                           d="M7 17L17 7M17 7H8M17 7V16"
-                           stroke="currentColor"
-                           strokeWidth="2"
-                           strokeLinecap="round"
-                           strokeLinejoin="round"
-                        ></path>
-                     </svg>
-                  </a>
-               </div>
+
+                  </motion.div>
+
+
+               </motion.div>
             </div>
-
-
          </motion.div>
-
-
       </section>
+
    )
 }
 export default Work
