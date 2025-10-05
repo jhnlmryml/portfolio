@@ -24,7 +24,7 @@ const Hero = ({animationName}) => {
                flex flex-col items-center justify-center text-center">
                <p className=" font-semibold">Hi! I am <span className="text-slate-900 font-black"> Jhon Almar </span>
                </p>
-               <p className="font-bls">A Passionate Frontend Developer</p>
+               <p className="font-bls">From Code to Conversion – I Build Websites That Work</p>
             </div>
 
             <div className="avatar">

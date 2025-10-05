@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {useAnimations, useFBX, useGLTF, useVideoTexture, useTexture} from '@react-three/drei';
 import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
 
 const Avatar = ({animationName, ...props}) => {
    const group = useRef();
@@ -40,7 +41,7 @@ const Avatar = ({animationName, ...props}) => {
       default: { scale: 2.9, position: [0, -3.3, 0], rotation: [0, 0, 0] },
    };
 
-   useEffect(() => {
+   useGSAP(() => {
 
       if (desktop.current) desktop.current.visible = animationName === "typing";
       if (phone.current) phone.current.visible = animationName === "texting";

@@ -19,6 +19,8 @@ const Contact = () => {
    const handleChange = ({target: {name, value}}) => {
       setForm({...form, [name]: value});
    }
+
+
    const handleSubmit = async (e) => {
       e.preventDefault();
       setLoading(true);

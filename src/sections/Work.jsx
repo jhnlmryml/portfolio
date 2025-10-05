@@ -9,7 +9,7 @@ const myItems = works.length;
 const Work = () => {
    const [selectedItems, setSelectedItems] = useState(0)
    const [isHovered, setIsHovered] = useState(false); // Track hover state
-   const [onChange, setOnChange] = useState(0);
+   // const [onChange, setOnChange] = useState(0);
    const [proj, setProj] = useState(0)
    const project = projects[proj]
    const items = works[selectedItems];
@@ -52,7 +52,7 @@ const Work = () => {
 
       if (!isHovered) {
          interval = setInterval(() => {
-            setProj((prevProj) => (prevProj === 0 ? 1 : 0));
+            setProj((prevProj) => (prevProj + 1) % 4)
          }, 5000);
       }
 
@@ -153,7 +153,7 @@ const Work = () => {
                   transition={{duration: 0.5}}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                  className="bg-gradient-to-tl from-third to-fifth rounded-2xl shadow-2xl p-8 relative"
+                  className="bg-gradient-to-tl from-third to-fifth rounded-2xl shadow-2xl p-8 relative cursor-pointer"
                >
                   <h3
                      className="text-second font-poppins font-extrabold text-center text-2xl hover:scale-105 transition-transform mb-5 border-b pb-4">
@@ -163,11 +163,12 @@ const Work = () => {
                   <motion.div
                      whileHover={{scale: 1.02}}
                      transition={{duration: 0.3}}
-                     onClick={() => setProj((prevProj) => (prevProj === 0 ? 1 : 0))}
+                     onClick={() => setProj((prevProj) => (prevProj + 1) % 4)}
                      className="rounded-3xl flex flex-col gap-6 items-center"
                   >
+                     {project.src ? (
                         <video
-                           className="w-full h-[230px] object-cover rounded-lg shadow-xl  max-w-md video"
+                           className="w-full h-[230px] object-cover rounded-lg shadow-xl max-w-md video"
                            src={project.src}
                            autoPlay
                            muted
@@ -175,6 +176,14 @@ const Work = () => {
                            playsInline
                            controls={false}
                         />
+                     ) : (
+                        <img
+                           className="w-full h-[230px] object-cover rounded-lg shadow-xl max-w-md"
+                           src={project.image}
+                           alt={project.title}
+                        />
+                     )}
+
 
                      <div className="relative  flex flex-col text-center pb-4">
                         <h2
@@ -198,30 +207,33 @@ const Work = () => {
                               ))}
 
                            </div>
-                           <motion.a
-                              whileHover={{scale: 1.1}}
-                              className="flex items-center gap-2 text-teal-300 hover:text-cyan-400  transition-all duration-300"
-                              href={project.link}
-                              target="_blank"
-                              rel="noreferrer"
-                           >
-                              <p className="font-nunito">Check Live Site</p>
-                              <svg
-                                 viewBox="0 0 24 24"
-                                 fill="none"
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 stroke="currentColor"
-                                 className="w-5 h-5"
+                           {project.link && (
+                              <motion.a
+                                 whileHover={{scale: 1.1}}
+                                 className="flex items-center gap-2 text-teal-300 hover:text-cyan-400  transition-all duration-300"
+                                 href={project.link}
+                                 target="_blank"
+                                 rel="noreferrer"
                               >
-                                 <path
-                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                 <p className="font-nunito">Check Live Site</p>
+                                 <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
                                     stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                 ></path>
-                              </svg>
-                           </motion.a>
+                                    className="w-5 h-5"
+                                 >
+                                    <path
+                                       d="M7 17L17 7M17 7H8M17 7V16"
+                                       stroke="currentColor"
+                                       strokeWidth="2"
+                                       strokeLinecap="round"
+                                       strokeLinejoin="round"
+                                    ></path>
+                                 </svg>
+                              </motion.a>
+                           )}
+
                         </div>
                      </div>
 

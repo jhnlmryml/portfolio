@@ -83,15 +83,13 @@ const About = () => {
                      initial={{opacity: 0, x: -20}}
                      whileInView={{opacity: 1, x: 0}}
                      transition={{duration: 1.6}}
-                     className="mt-4 ">
-                     <p className="py-2 text-xl font-poppins text-prime font-semibold">I’m Jhon Almar 😊</p>
+                     className="mt-8 ">
+                     <p className="py-2 text-xl sm:text-2xl font-poppins text-center text-prime font-semibold">I’m Jhon Almar</p>
                      <p className="text-black-400 font-nunito mt-2 text-justify">
-                        As a front-end web developer with a strong background in Information Technology, I specialize in
-                        creating visually appealing, responsive, and high-performance websites that provide a consistent
-                        user experience. With a sharp eye for design and a desire to use cutting-edge web technologies,
-                        I excel at HTML, CSS, JavaScript, and modern frameworks, ensuring clean, efficient code and
-                        user-friendly interfaces. I'm committed to developing ideas into engaging digital experiences
-                        that help organizations thrive online and stay ahead of industry trends.
+                        Your vision, my code. Together we build websites that win. I create modern, responsive, and
+                        high-performing websites that combine clean design with seamless user experience, helping
+                        businesses stand out, connect with their audience, and achieve real growth online. Every project
+                        I build is driven by a commitment to quality, innovation, and results that truly make an impact.
                      </p>
                   </motion.div>
                </div>
@@ -191,8 +189,8 @@ const About = () => {
                         backgroundImageOpacity={0.5}
                         ref={globeEl}
                         animateIn={true}
-                        globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
-                        bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
+                        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+                        bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                         htmlElementsData={[{lat: 15.5794, lng: 120.6200,}]}
                         htmlElement={(d) => {
                            const el = document.createElement("div");
