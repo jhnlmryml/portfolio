@@ -60,6 +60,50 @@ export const works = [
 export const projects = [
    {
       id: 1,
+      title: 'Remote Control Car',
+      desc: 'An IoT-powered remote control car built with ESP32 and Arduino using C++. The project showcases wireless communication and hardware-software integration for real-time movement control and responsiveness.',
+      src: '/video/rc-car.mp4',
+      link: '',
+      tags: [
+         {
+            id: 2,
+            name: 'arduino',
+            path: '/assets/arduino.svg',
+         },
+         {
+            id: 3,
+            name: 'c++',
+            path: '/assets/cpp.svg',
+         },
+      ]
+   },
+   {
+      id: 2,
+      title: 'Point of Sale (POS) System',
+      desc: 'A web-based Point of Sale (POS) system designed with PHP, MySQL, and Bootstrap. It provides inventory tracking, sales management, and receipt generation, offering an efficient solution for small businesses.',
+      src: '',
+      image: 'assets/dashboard.jpeg',
+      link: '',
+      tags: [
+         {
+            id: 1,
+            name: 'php',
+            path: '/assets/php.svg',
+         },
+         {
+            id: 2,
+            name: 'mysql',
+            path: '/assets/mysql.svg',
+         },
+         {
+            id: 3,
+            name: 'bootstrap',
+            path: '/assets/bootstrap.svg',
+         },
+      ]
+   },
+   {
+      id: 3,
       title: 'Todo App',
       desc: 'A powerful and intuitive To Do App designed to optimize productivity and task management. Featuring a sleek and responsive interface built with React, this app allows users to seamlessly organize, track, and prioritize tasks.',
       src: '/video/todo.mp4',
@@ -83,7 +127,7 @@ export const projects = [
       ]
    },
    {
-      id: 2,
+      id: 4,
       title: 'Calculator',
       desc: 'A sleek and responsive calculator application built with React, designed to deliver fast and accurate results for essential arithmetic operations. Its user-friendly interface ensures smooth interaction, making it ideal for both quick calculations and everyday use.',
       src: '/video/calculator.mp4',
@@ -106,8 +150,8 @@ export const projects = [
          },
       ]
    }
-
 ]
+
 
 export const skills = [
    {
@@ -131,13 +175,8 @@ export const skills = [
       level: 40,
    },
    {
-      title: "PHP",
-      icon: "/assets/php.svg",
-      level: 40,
-   },
-   {
-      title: "BOOTSRAP",
-      icon: "/assets/bootstrap.svg",
+      title: "NodeJS",
+      icon: "/assets/nodejs.svg",
       level: 40,
    },
    {
@@ -146,8 +185,18 @@ export const skills = [
       level: 40,
    },
    {
+      title: "BOOTSRAP",
+      icon: "/assets/bootstrap.svg",
+      level: 40,
+   },
+   {
       title: "MYSQL",
       icon: "/assets/mysql.svg",
       level: 30,
+   },
+   {
+      title: "PHP",
+      icon: "/assets/php.svg",
+      level: 40,
    },
 ];
